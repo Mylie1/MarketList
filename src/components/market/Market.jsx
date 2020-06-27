@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'fontawesome'
+import '../../dependencies'
 
 import Navbar from '../header/Navbar'
 

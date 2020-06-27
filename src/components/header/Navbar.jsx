@@ -1,10 +1,11 @@
 import React from 'react'
+import './navbar.css'
 import logo from '../../assets/images/brand.png'
 
 export default props =>
 <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <a className="navbar-brand">
-        <img src="{logo}" alt="marketList"/>
+        <img src={logo} className="img-fluid logo" alt="marketList"/>
     </a>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
