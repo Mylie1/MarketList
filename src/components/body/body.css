@@ -1,0 +1,35 @@
+.custom_checkbox .checkbox {
+    display: none;
+}
+
+.custom_checkbox .checkbox_label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    margin: 0;
+}
+
+.custom_checkbox .checkbox + label::before {
+    content: "\00a0";
+    display: inline-block;
+    vertical-align: top;
+    height: 16px;
+    width: 16px;
+    margin: 0 .25em 0 0;
+    padding: 0;
+    font: 16px/1em sans-serif;
+    border-radius: 4px;
+    border: 1px solid #5D5C5C;
+}
+
+.custom_checkbox .checkbox:checked + label::before {
+    content: "\2713";
+    text-align: center;
+    background: #A0A0A0;
+    color: #FFF;
+}
+
+.label_checked {
+    text-decoration: line-through;
+}
