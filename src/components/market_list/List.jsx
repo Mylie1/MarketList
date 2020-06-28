@@ -1,25 +1,23 @@
 import React, { Component } from 'react'
 import Item from './Item'
-import axios from 'axios'
-
-const baseUrl = 'http://localhost:3001/list'
-const initialState = {
-    list: []
-}
 
 export default class List extends Component {
     constructor(props) {
         super(props)
 
-        this.state = { ...initialState }
+        this.state = {
+            list: []
+        }
 
         this.renderItems = this.renderItems.bind(this)
     }
 
-    componentWillMount() {
-        axios(baseUrl).then(response => {
-            this.setState({ list: response.data })
-        })
+    componentDidUpdate(prevProps) {
+        if(this.props != prevProps) {
+            this.setState({
+                list: [...this.props.list]
+            })
+        }
     }
 
     renderItems() {
@@ -30,6 +28,7 @@ export default class List extends Component {
                 <Item
                     key={ item.id }
                     { ...item }
+                    removeItem={ this.props.removeItem }
                 >
                 </Item>
             )
@@ -38,8 +37,12 @@ export default class List extends Component {
 
     render() {
         return (
-            <ul className="list-unstyled">
-                { this.renderItems() }
+            <ul className="list-unstyled mb-1">
+                {
+                    this.state.list.length ?
+                    this.renderItems() :
+                    <h6 className="text-center mb-2">Ainda não há items na sua lista!</h6>
+                }
             </ul>
         )
     }

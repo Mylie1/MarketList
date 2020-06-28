@@ -22,10 +22,19 @@ export default class Item extends Component {
 
         return (
             <li className="custom_checkbox">
-                <input type="checkbox" id={`item_${ this.props.id }`} className="checkbox" />
-                <label onClick={ this.isChecked } htmlFor={`item_${ this.props.id }`} className={`checkbox_label ${ checkedClass }`}>
-                    { this.props.name }
-                </label>
+                <div className="d-inline-flex">
+                    <input type="checkbox" id={`item_${ this.props.id }`} className="checkbox" />
+                    <label onClick={ this.isChecked } htmlFor={`item_${ this.props.id }`} className={`checkbox_label ${ checkedClass }`}>
+                        { this.props.name }
+                    </label>
+                    <a
+                        onClick={ (e) => this.props.removeItem(e) }
+                        id={`remove_item_${ this.props.id }`}
+                        className="ml-1 remove_item"
+                    >
+                        <i className="fa fa-times"></i>
+                    </a>
+                </div>
             </li>
         )
     }

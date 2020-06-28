@@ -33,3 +33,23 @@
 .label_checked {
     text-decoration: line-through;
 }
+
+#add_item_input {
+    margin-bottom: .5rem;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+#add_item_input:focus {
+    box-shadow: none;
+}
+
+.remove_item {
+    cursor: pointer;
+    color: #dc3545 !important;
+}
+
+.remove_item:hover {
+    color: #6c757d !important;
+}
