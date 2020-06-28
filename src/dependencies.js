@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'font-awesome/css/font-awesome.css'
 import 'jquery/dist/jquery'
 import 'popper.js/dist/popper'
 import 'bootstrap/dist/js/bootstrap'
-import 'fontawesome'
